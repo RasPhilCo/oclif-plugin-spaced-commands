@@ -1,9 +1,9 @@
 {
-  "name": "@oclif/plugin-spaced-commands",
+  "name": "@tiagonapoli/oclif-plugin-spaced-commands",
   "description": "convert an oclif CLI to use spaced commands",
-  "version": "0.0.0",
-  "author": "Philipe Navarro @RasPhilCo",
-  "bugs": "https://github.com/RasPhilCo/oclif-plugin-spaced-commands/issues",
+  "version": "0.0.1",
+  "author": "Philipe Navarro @RasPhilCo Tiago Nápoli @tiagonapoli",
+  "bugs": "https://github.com/tiagonapoli/oclif-plugin-spaced-commands",
   "dependencies": {
     "@oclif/command": "^1",
     "@oclif/config": "^1",
@@ -40,7 +40,7 @@
     "/oclif.manifest.json",
     "/yarn.lock"
   ],
-  "homepage": "https://github.com/RasPhilCo/oclif-plugin-spaced-commands",
+  "homepage": "https://github.com/tiagonapoli/oclif-plugin-spaced-commands",
   "keywords": [
     "oclif-plugin"
   ],
@@ -57,7 +57,7 @@
       ]
     }
   },
-  "repository": "RasPhilCo/spaces",
+  "repository": "tiagonapoli/oclif-plugin-spaced-commands",
   "scripts": {
     "postpack": "rm -f oclif.manifest.json npm-shrinkwrap.json",
     "posttest": "tsc -p test --noEmit && tslint -p test -t stylish",
