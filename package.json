@@ -36,7 +36,6 @@
   },
   "files": [
     "/lib",
-    "/npm-shrinkwrap.json",
     "/oclif.manifest.json",
     "/yarn.lock"
   ],
@@ -48,9 +47,7 @@
   "oclif": {
     "commands": "./lib/commands",
     "bin": "oclif-example",
-    "devPlugins": [
-      "@oclif/plugin-help"
-    ],
+    "devPlugins": [],
     "hooks": {
       "init": [
         "./lib/hooks/init"

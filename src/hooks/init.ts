@@ -3,6 +3,8 @@ import {CLIError} from '@oclif/errors'
 
 import CommandTree from '../tree'
 
+const CommandHelp = require('@oclif/plugin-help/lib/command').default
+
 // deps in Help#topics
 const stripAnsi = require('strip-ansi').stripAnsi
 const {compact} = require('@oclif/plugin-help/lib/util')
@@ -54,6 +56,16 @@ export const init: Config.Hook<'init'> = async function (ctx) {
     return
   }
   ctx.config.findCommand = spacesFindCommand
+
+  //overwrite commandHelp.defaultUsage
+  CommandHelp.prototype.defaultUsage = function(_: Config.Command.Flag[]): string {
+    return compact([
+      this.command.id.replace(':', ' '),
+      this.command.args.filter((a: any) => !a.hidden).map((a: any) => this.arg(a)).join(' '),
+      // flags.length && '[OPTIONS]',
+    ]).join(' ')
+  }
+  
 
   // overwrite config.findTopic
   const findTopic = ctx.config.findTopic
